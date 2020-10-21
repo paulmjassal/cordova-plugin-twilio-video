@@ -1,4 +1,4 @@
-package cordova.plugin.twilio.video;
+package com.clouddevelopmentresources.cdrtwilio;
 
 
 import android.Manifest;
@@ -21,9 +21,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.google.gson.JsonObject;
-import com.koushikdutta.async.future.FutureCallback;
-import com.koushikdutta.ion.Ion;
 import com.twilio.video.CameraCapturer;
 import com.twilio.video.LocalParticipant;
 import com.twilio.video.RoomState;
@@ -680,24 +677,6 @@ public class ConversationActivity extends AppCompatActivity {
                 }
             }
         };
-    }
-
-    private void retrieveAccessTokenfromServer() {
-        Ion.with(this)
-                .load("http://localhost:8000/token.php")
-                .asJsonObject()
-                .setCallback(new FutureCallback<JsonObject>() {
-                    @Override
-                    public void onCompleted(Exception e, JsonObject result) {
-                        if (e == null) {
-                            ConversationActivity.this.accessToken = result.get("token").getAsString();
-                        } else {
-                            Toast.makeText(ConversationActivity.this,
-                                    R.string.error_retrieving_access_token, Toast.LENGTH_LONG)
-                                    .show();
-                        }
-                    }
-                });
     }
 
     private void configureAudio(boolean enable) {

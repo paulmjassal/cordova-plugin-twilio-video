@@ -1,4 +1,5 @@
-package cordova.plugin.twilio.video;
+package com.clouddevelopmentresources.cdrtwilio;
+
 
 import android.content.Context;
 import android.content.DialogInterface;

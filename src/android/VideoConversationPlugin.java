@@ -1,4 +1,5 @@
-package cordova.plugin.twilio.video;
+package com.clouddevelopmentresources.cdrtwilio;
+
 
 import org.apache.cordova.BuildHelper;
 import org.apache.cordova.CallbackContext;
